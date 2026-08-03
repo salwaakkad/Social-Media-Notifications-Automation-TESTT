@@ -9,29 +9,5 @@
       "color": 16711680,
       "caption_template": "▶️ **New YouTube Upload** — {account}\n\n{summary}\n\n🔗 {link}\n\n_Watch, like & comment in the first hour — that's what the algorithm weighs most 🚀_"
     },
-    {
-      "name": "Instagram - CompanyPage",
-      "platform": "Instagram",
-      "route": "/instagram/user/YOUR_IG_USERNAME",
-      "webhook_env": "DISCORD_WEBHOOK_URL",
-      "color": 14183619,
-      "caption_template": "📸 **New Instagram Post** — {account}\n\n{summary}\n\n🔗 {link}\n\n_Team: like, comment & reshare within the hour for best reach 🚀_"
-    },
-    {
-      "name": "TikTok - CompanyPage",
-      "platform": "TikTok",
-      "route": "/tiktok/user/YOUR_TIKTOK_USERNAME",
-      "webhook_env": "DISCORD_WEBHOOK_URL",
-      "color": 16777215,
-      "caption_template": "🎵 **New TikTok Video** — {account}\n\n{summary}\n\n▶️ {link}\n\n_Drop a like + comment, let's get the algorithm moving 📈_"
-    },
-    {
-      "name": "LinkedIn - CompanyPage",
-      "platform": "LinkedIn",
-      "route": "/linkedin/company/YOUR_LINKEDIN_COMPANY_ID",
-      "webhook_env": "DISCORD_WEBHOOK_URL",
-      "color": 34527,
-      "caption_template": "💼 **New LinkedIn Update** — {account}\n\n{summary}\n\n🔗 {link}\n\n_Please engage from your personal accounts too — it boosts organic reach 🙌_"
-    }
   ]
 }
