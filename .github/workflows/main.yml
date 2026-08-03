@@ -1,0 +1,38 @@
+name: Social Media -> Discord
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 minutes (edit frequency here)
+  workflow_dispatch: {}       # lets you also trigger it manually from the Actions tab
+
+permissions:
+  contents: write            # needed so the workflow can commit state.json back
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: YT
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run poller
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python post_to_discord.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "social-bot"
+          git config user.email "social-bot@users.noreply.github.com"
+          git add state.json
+          git diff --staged --quiet || git commit -m "chore: update posted-items state [skip ci]"
+          git push
